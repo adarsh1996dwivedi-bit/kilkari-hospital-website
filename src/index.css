@@ -128,11 +128,15 @@ p { margin: 0 0 0.8em; }
 .hero-dots button.is-active { width: 28px; background: var(--orange-500); }
 .quote-stage .hero-dots button { background: var(--sky-200); }
 .quote-stage .hero-dots button.is-active { background: var(--orange-500); }
-.hero-arrows { position: absolute; right: 28px; bottom: 120px; z-index: 1; display: flex; gap: 8px; }
+.hero-arrows { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
 .hero-arrows button {
+  position: absolute; top: 50%; transform: translateY(-50%); pointer-events: auto;
+  display: flex; align-items: center; justify-content: center; padding: 0 0 4px; line-height: 1;
   width: 46px; height: 46px; border-radius: 50%; border: 0; background: white; color: var(--sky-800);
   font-size: 1.6rem; cursor: pointer; box-shadow: var(--shadow);
 }
+.hero-arrows button:first-child { left: 28px; }
+.hero-arrows button:last-child { right: 28px; }
 
 .stats-wrap { margin-top: -64px; position: relative; z-index: 2; }
 .stats {
